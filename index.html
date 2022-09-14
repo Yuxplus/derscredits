@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <script>
+
+        function submitFunc(){
+        var totalC = document.getElementById("totalCredit").value;
+        var totalP = document.getElementById("totalPoint").value;
+        var lessonC = document.getElementById("lesCredit").value;
+        
+        var L1 = document.getElementById("letter1").value;
+        var L2 = document.getElementById("letter2").value;
+
+        var Ls1 = 0;
+        var Ls2 = 0;
+
+        switch(L1){
+            case '1' : 
+                Ls1 = 4.0;
+                    break;
+            case '2' : 
+                Ls1 = 3.70;
+                    break;
+            case '3' :
+                Ls1 = 3.30;
+                    break;
+            case '4' :
+                Ls1 = 3.0;
+                    break;
+            case '5' :
+                Ls1 = 2.70;
+                    break;
+            case '6' :
+                Ls1 = 2.30;
+                    break;
+            case '7' :
+                Ls1 = 2.0;
+                    break;
+            case '8' :
+                Ls1 = 1.70;
+                    break;
+            case '9' :
+                Ls1 = 1.30;
+                    break;
+            case '10' :
+                Ls1 = 1.0;
+                    break;
+            case '11' :
+                Ls1 = 0;
+                    break;
+            default :
+            Ls1 = 0;
+            break;
+        }
+
+        switch(L2){
+            case '1' : 
+                Ls2 = 4.0;
+                    break;
+            case '2' : 
+                Ls2 = 3.70;
+                    break;
+            case '3' :
+                Ls2 = 3.30;
+                    break;
+            case '4' :
+                Ls2 = 3.0;
+                    break;
+            case '5' :
+                Ls2 = 2.70;
+                    break;
+            case '6' :
+                Ls2 = 2.30;
+                    break;
+            case '7' :
+                Ls2 = 2.0;
+                    break;
+            case '8' :
+                Ls2 = 1.70;
+                    break;
+            case '9' :
+                Ls2 = 1.30;
+                    break;
+            case '10' :
+                Ls2 = 1.0;
+                    break;
+            case '11' :
+                Ls2 = 0;
+                    break;
+            default :
+            Ls2 = 0;
+            break;
+        }
+       
+        var fark =  (Ls2 - Ls1 )* 3;
+        var result = (((Ls2 - Ls1) * 3) + totalP) / totalC;
+        
+        document.getElementById("demo").innerHTML = ((((Ls2 - Ls1) * lessonC ) + parseFloat(totalP)) / parseInt(totalC)).toFixed(2);
+
+        
+
+        
+        
+        
+        
+
+        }
+
+
+    </script>
+    <div class="screen">
+        <table><tr>
+            <td><label>Total Kredi:</label></td>
+            <td><input id="totalCredit"  type="text" placeholder="Total Kredi"></td>
+        </tr>
+    <tr>
+    <td><label>Toplanılan Puan:</label></td>
+    <td><input id="totalPoint" type="text" placeholder="Toplam Puan"></td>
+    </tr>
+    
+    
+    <tr>
+        <td><label>Değiştirmek istediğin dersin kredisi ? </label></td>
+        <td><input id="lesCredit" type="number" max="5" min="1" placeholder="Kredi"></td>
+    </tr>
+    
+    <tr>
+        <td><label>Harf notun ? </label></td>
+        <td><select name="lx1" id="letter1">
+            <option value="1">A</option>
+            <option value="2">A-</option>
+            <option value="3">B+</option>
+            <option value="4">B</option>
+            <option value="5">B-</option>
+            <option value="6">C+</option>
+            <option value="7">C</option>
+            <option value="8">C-</option>
+            <option value="9">D+</option>
+            <option value="10">D</option>
+            <option value="11">F</option>
+        </select></td>
+    </tr>
+    
+    <tr>
+        <td><label>Ne olsun istersin ? </label></td>
+        <td><select name="lx2" id="letter2">
+            <option value="1">A</option>
+            <option value="2">A-</option>
+            <option value="3">B+</option>
+            <option value="4">B</option>
+            <option value="5">B-</option>
+            <option value="6">C+</option>
+            <option value="7">C</option>
+            <option value="8">C-</option>
+            <option value="9">D+</option>
+            <option value="10">D</option>
+            <option value="11">F</option>
+        </select></td>
+    </tr>
+    <tr>
+    <td><button onclick="submitFunc()">Hesapla Bakalım</button></td>
+    <td><p id="demo"></p></td>
+    </tr>
+
+    
+</table>
+</div>
+
+<footer class="container"> Footer Side </footer>
+</body>
+</html>
