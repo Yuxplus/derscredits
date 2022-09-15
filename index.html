@@ -14,7 +14,7 @@
 
         function submitFunc(){
         var totalC = document.getElementById("totalCredit").value;
-        var totalP = document.getElementById("totalPoint").value;
+        var totalP = document.getElementById("totalPoint").value.replaceAll(',', '.');
         var lessonC = document.getElementById("lesCredit").value;
         
         var L1 = document.getElementById("letter1").value;
@@ -30,11 +30,34 @@
 
        
         var fark =  (Ls2 - Ls1 )* 3;
-        var result = (((Ls2 - Ls1) * 3) + totalP) / totalC;
-        document.getElementById("demo").innerHTML = ((((Ls2 - Ls1) * lessonC ) + parseFloat(totalP)) / parseInt(totalC)).toFixed(2);
+        var result = ((((Ls2 - Ls1) * lessonC ) + parseFloat(totalP)) / parseInt(totalC)).toFixed(2);
+
+        function isNumeric(result) {
+        return !isNaN(parseFloat(result)) && isFinite(result);
+        }
+
+        if(isNumeric(result)){
+            document.getElementById("demo").innerHTML = result;
+        }else{
+            document.getElementById("demo").innerHTML = "Gerekli alanları doldurun";
+        }
+
+
+
+        
         }
     </script>
     <div class="screen">
+
+
+        <table>
+            <tr>
+                <td id="img1"><img src="./img/semester.png" alt=""></td>
+                <td ><img src="./img/points.png" alt=""></td>
+            </tr>
+        </table>
+
+
         <table><tr>
             <td><label>Total Kredi:</label></td>
             <td><input id="totalCredit"  type="text" placeholder="Total Kredi"></td>
@@ -84,7 +107,7 @@
         </select></td>
     </tr>
     <tr>
-    <td><button onclick="submitFunc()">Hesapla Bakalım</button></td>
+    <td><button type="submit" onclick="submitFunc()" >Hesapla Bakalım</button></td>
     <td><p id="demo"></p></td>
     </tr>
 
