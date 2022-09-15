@@ -11,6 +11,10 @@
 <body>
     
     <script>
+        
+        function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+        }
 
         function submitFunc(){
         var totalC = document.getElementById("totalCredit").value;
@@ -31,10 +35,6 @@
        
         var fark =  (Ls2 - Ls1 )* 3;
         var result = ((((Ls2 - Ls1) * lessonC ) + parseFloat(totalP)) / parseInt(totalC)).toFixed(2);
-
-        function isNumeric(result) {
-        return !isNaN(parseFloat(result)) && isFinite(result);
-        }
 
         if(isNumeric(result)){
             document.getElementById("demo").innerHTML = result;
