@@ -23,99 +23,16 @@
         var Ls1 = 0;
         var Ls2 = 0;
 
-        switch(L1){
-            case '1' : 
-                Ls1 = 4.0;
-                    break;
-            case '2' : 
-                Ls1 = 3.70;
-                    break;
-            case '3' :
-                Ls1 = 3.30;
-                    break;
-            case '4' :
-                Ls1 = 3.0;
-                    break;
-            case '5' :
-                Ls1 = 2.70;
-                    break;
-            case '6' :
-                Ls1 = 2.30;
-                    break;
-            case '7' :
-                Ls1 = 2.0;
-                    break;
-            case '8' :
-                Ls1 = 1.70;
-                    break;
-            case '9' :
-                Ls1 = 1.30;
-                    break;
-            case '10' :
-                Ls1 = 1.0;
-                    break;
-            case '11' :
-                Ls1 = 0;
-                    break;
-            default :
-            Ls1 = 0;
-            break;
-        }
+        const letterGrades = [4.0,3.70,3.30,3.0,2.70,2.30,2.0,1.70,1.30,1.0,0];
+        
+        Ls1 = letterGrades[L1];
+        Ls2 = letterGrades[L2];
 
-        switch(L2){
-            case '1' : 
-                Ls2 = 4.0;
-                    break;
-            case '2' : 
-                Ls2 = 3.70;
-                    break;
-            case '3' :
-                Ls2 = 3.30;
-                    break;
-            case '4' :
-                Ls2 = 3.0;
-                    break;
-            case '5' :
-                Ls2 = 2.70;
-                    break;
-            case '6' :
-                Ls2 = 2.30;
-                    break;
-            case '7' :
-                Ls2 = 2.0;
-                    break;
-            case '8' :
-                Ls2 = 1.70;
-                    break;
-            case '9' :
-                Ls2 = 1.30;
-                    break;
-            case '10' :
-                Ls2 = 1.0;
-                    break;
-            case '11' :
-                Ls2 = 0;
-                    break;
-            default :
-            Ls2 = 0;
-            break;
-        }
        
         var fark =  (Ls2 - Ls1 )* 3;
         var result = (((Ls2 - Ls1) * 3) + totalP) / totalC;
-        
         document.getElementById("demo").innerHTML = ((((Ls2 - Ls1) * lessonC ) + parseFloat(totalP)) / parseInt(totalC)).toFixed(2);
-
-        
-
-        
-        
-        
-        
-
         }
-
-
     </script>
     <div class="screen">
         <table><tr>
@@ -136,34 +53,34 @@
     <tr>
         <td><label>Harf notun ? </label></td>
         <td><select name="lx1" id="letter1">
-            <option value="1">A</option>
-            <option value="2">A-</option>
-            <option value="3">B+</option>
-            <option value="4">B</option>
-            <option value="5">B-</option>
-            <option value="6">C+</option>
-            <option value="7">C</option>
-            <option value="8">C-</option>
-            <option value="9">D+</option>
-            <option value="10">D</option>
-            <option value="11">F</option>
+            <option value="0">A</option>
+            <option value="1">A-</option>
+            <option value="2">B+</option>
+            <option value="3">B</option>
+            <option value="4">B-</option>
+            <option value="5">C+</option>
+            <option value="6">C</option>
+            <option value="7">C-</option>
+            <option value="8">D+</option>
+            <option value="9">D</option>
+            <option value="10">F</option>
         </select></td>
     </tr>
     
     <tr>
         <td><label>Ne olsun istersin ? </label></td>
         <td><select name="lx2" id="letter2">
-            <option value="1">A</option>
-            <option value="2">A-</option>
-            <option value="3">B+</option>
-            <option value="4">B</option>
-            <option value="5">B-</option>
-            <option value="6">C+</option>
-            <option value="7">C</option>
-            <option value="8">C-</option>
-            <option value="9">D+</option>
-            <option value="10">D</option>
-            <option value="11">F</option>
+            <option value="0">A</option>
+            <option value="1">A-</option>
+            <option value="2">B+</option>
+            <option value="3">B</option>
+            <option value="4">B-</option>
+            <option value="5">C+</option>
+            <option value="6">C</option>
+            <option value="7">C-</option>
+            <option value="8">D+</option>
+            <option value="9">D</option>
+            <option value="10">F</option>
         </select></td>
     </tr>
     <tr>
